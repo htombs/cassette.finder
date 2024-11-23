@@ -6,8 +6,6 @@ cursor = connect.cursor()
 
 cursor.execute('''CREATE TABLE IF NOT EXISTS distributor_table (distributor_id INT PRIMARY KEY, distributor_name VARCHAR(255))''')
 
-# cursor.execute('''ALTER TABLE distributor_table ADD distributor_link_url VARCHAR(255)''')
-
 connect.commit()
 
 cursor.execute('''REPLACE INTO distributor_table (distributor_id, distributor_name, distributor_link_url) 
