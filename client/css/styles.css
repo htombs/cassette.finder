@@ -104,8 +104,13 @@ table {
 }
 
 /* th {
-    display: none; use this code to make the header appear on command rather that always be there
+    display: none; 
 } */
+
+th {
+    cursor: pointer;
+}
+
 
 th, td {
     outline: 2px solid black;
