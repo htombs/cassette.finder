@@ -1,7 +1,7 @@
 from unittest.mock import MagicMock,Mock
 import unittest
 import sqlite3
-from database.tables.database import connect_database, row_to_dict
+from server.database.tables.database import connect_database, row_to_dict, response
 from pathlib import WindowsPath
 
 class MyTests(unittest.TestCase):
@@ -11,7 +11,7 @@ class MyTests(unittest.TestCase):
         sqlite3.connect = MagicMock(return_value='connection succeeded')
 
         dbc = connect_database()
-        sqlite3.connect.assert_called_with(WindowsPath('C:/Users/hazto/Documents/Work/cassette.finder/server/database/tables/cassette_finder.db'))
+        sqlite3.connect.assert_called_with(WindowsPath('C:/Users/hazto/Documents/Coding/github.com/htombs/cassette.finder/server/database/tables/cassette_finder.db'))
         self.assertEqual(dbc,'connection succeeded')
     
     def test_row_to_dict(self):
@@ -21,5 +21,12 @@ class MyTests(unittest.TestCase):
         self.assertEqual(got, want, "it didnt work")
 
     def test_response(self):
-        input_list = []
-        # THIS NEEDS TO BE FINISHED, will pick up at later date
+        input_list = ["1", "2"]
+        expect = len(input_list) # 2
+        result = response(rows=input_list)
+        got = len(result)
+        self.assertEqual(got, expect, "number of results did not match")
+
+if __name__ == '__main__':
+    unittest.main()
+    
