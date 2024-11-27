@@ -1,4 +1,5 @@
-from server.database.tables.cassettes import createCassetteTable, insertCassetteData
+from .tables.cassettes import createCassetteTable, insertCassetteData, dropTable
 
 createCassetteTable()
 insertCassetteData()
+dropTable()
