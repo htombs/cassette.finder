@@ -1,7 +1,7 @@
 from unittest.mock import MagicMock,Mock
 import unittest
 import sqlite3
-from database.tables.cassettes_table import createCassettesTable
+from server.database.tables.cassettes_table import createCassettesTable
 
 class TestCassettesTable(unittest.TestCase):
     def test_createCassettesTable(self):
